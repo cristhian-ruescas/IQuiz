@@ -72,7 +72,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YxH-qs-DYT">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YxH-qs-DYT">
                                 <rect key="frame" x="64" y="285" width="247" height="62"/>
                                 <color key="backgroundColor" red="0.45490196078431372" green="0.19607843137254902" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -87,7 +87,7 @@
                                     <action selector="buttonAction:" destination="LRp-ZA-woN" eventType="touchUpInside" id="DNi-WF-5Eo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LyI-V2-mir">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LyI-V2-mir">
                                 <rect key="frame" x="64" y="379" width="247" height="62"/>
                                 <color key="backgroundColor" red="0.4549019608" green="0.1960784314" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -102,7 +102,7 @@
                                     <action selector="buttonAction:" destination="LRp-ZA-woN" eventType="touchUpInside" id="XOX-R8-362"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exk-jg-sKs">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exk-jg-sKs">
                                 <rect key="frame" x="64" y="473" width="247" height="62"/>
                                 <color key="backgroundColor" red="0.4549019608" green="0.1960784314" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -138,6 +138,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="tG5-O1-UJQ"/>
                     <connections>
+                        <outlet property="titleQuestion" destination="gCD-CJ-wmO" id="m1K-hL-Ue8"/>
                         <outletCollection property="collectionsButtons" destination="YxH-qs-DYT" collectionClass="NSMutableArray" id="Bfr-2g-1ce"/>
                         <outletCollection property="collectionsButtons" destination="LyI-V2-mir" collectionClass="NSMutableArray" id="tjJ-8h-F41"/>
                         <outletCollection property="collectionsButtons" destination="exk-jg-sKs" collectionClass="NSMutableArray" id="j3h-B8-uTS"/>

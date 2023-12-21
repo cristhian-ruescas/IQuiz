@@ -1,36 +1,32 @@
-//
-//  QuestaoViewController.swift
-//  iQuiz
-//
-//  Created by Cristhian Ruescas on 18/12/23.
-//
-
 import UIKit
 
-class QuestaoViewController: UIViewController {
+class QuestionViewController: UIViewController {
     
-    var pontuacao = 0
-    var numeroQuestao = 0
+    var score = 0
+    var numberQuestion = 0
     
     @IBOutlet weak var titleQuestion: UILabel!
     
     @IBOutlet var collectionsButtons: [UIButton]!
     
     @IBAction func buttonAction(_ sender: UIButton) {
-        if(sender.tag == questoes[numeroQuestao].respostaCorreta){
+        if(sender.tag == questions[numberQuestion].rightAnswer){
             sender.backgroundColor = UIColor(red: 11/255, green: 161/255, blue: 53/255, alpha: 1.0)
-            pontuacao += 1
-            print("Certo! sua pontuação atual é de: \(pontuacao)")
+            score += 1
         } else{
             sender.backgroundColor = UIColor(red: 211/255, green: 17/255, blue: 17/255, alpha: 1.0)
-            pontuacao -= 1
-            print("Errado! sua pontuação atual é de: \(pontuacao)")
         }
         
-        if numeroQuestao < questoes.count - 1 {
-            numeroQuestao += 1
+        if numberQuestion < questions.count - 1 {
+            numberQuestion += 1
             Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(configQuestion), userInfo: nil, repeats: false)
+        } else{
+            navigateToPerformanceScreen()
         }
+    }
+    
+    func navigateToPerformanceScreen(){
+        performSegue(withIdentifier: "goToPerformanceScreen", sender: nil)
     }
     
     override func viewDidLoad() {
@@ -48,11 +44,16 @@ class QuestaoViewController: UIViewController {
         }
     }
     @objc func configQuestion(){
-        titleQuestion.text = questoes[numeroQuestao].titulo
+        titleQuestion.text = questions[numberQuestion].title
         for buttonResponse in collectionsButtons{
-            let titleButton = questoes[numeroQuestao].respostas[buttonResponse.tag]
+            let titleButton = questions[numberQuestion].answers[buttonResponse.tag]
             buttonResponse.setTitle(titleButton, for: .normal)
             buttonResponse.backgroundColor = UIColor(red: 116/255, green: 50/255, blue: 255/255, alpha: 1.0)
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let performanceVC = segue.destination as? PerformanceViewController else {return}
+        performanceVC.score = score
     }
 }

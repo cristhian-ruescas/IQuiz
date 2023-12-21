@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  iQuiz
-//
-//  Created by Cristhian Ruescas on 18/12/23.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
@@ -17,10 +10,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configuraLayout()
+        configLayout()
     }
     
-    func configuraLayout(){
+    func configLayout(){
+        navigationItem.hidesBackButton = true
         buttonStartedQuiz.layer.cornerRadius = 12.0
     }
 }
